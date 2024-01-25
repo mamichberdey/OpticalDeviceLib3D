@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from collections.abc import Iterable 
+from collections.abc import Iterable
 import os
 import numpy as np
 from tqdm import tqdm
@@ -518,7 +518,7 @@ class CRL2D(OpticalDevice):
             z_arr = np.arange(focus-eps, focus+eps, dz)
             arr_3d = np.empty(shape=(len(x_arr), len(y_arr), len(z_arr)))
             for i,z in enumerate(z_arr):
-                wfs = self.sv_cpu(arr=E_arr, z=z, k=self.k)
+                wfs = self.sv(arr=E_arr, z=z, k=self.k)
                 # wfs = wfs[abs(x_arr) <= x_eps]
                 arr_3d[i] = abs(wfs)**2
             # max_peak = np.max(arr_3d)
@@ -623,6 +623,31 @@ class CRL2D(OpticalDevice):
         betta = self.betta if betta == None else betta
 
         return abs(self.image_prop(z0=z0, z1=z1, N_lens=N_lens, delta=delta, betta=betta, d=d, A=A, R=R, k=k, x=x))**2
+
+    def focus_params(self, eps = 1e-4, n_dots = 100, focus=None, E0=cp.empty(1)):
+        focus = self.focus() if focus == None else focus
+        E0 = self.E(z=0) if cp.any(E0 == cp.empty(1)) else E0
+        # n_dots = n_dots - 1
+        dz = 2 * eps / n_dots
+        I_max = 0
+        
+        z_arr = cp.arange(focus-eps, focus+eps, dz)
+        for z_i in z_arr:
+            E_arr = self.sv(arr=E0, z=z_i, k=self.k)
+            I_arr = abs(E_arr)**2
+            I_max_j = cp.max(I_arr)
+            if  I_max_j >= I_max:
+                I_max = I_max_j
+                I_distr_max = I_arr
+                z_max = z_i
+        ind = cp.unravel_index(cp.argmax(I_distr_max, axis=None), I_distr_max.shape)
+        i, j = int(ind[0]), int(ind[1])
+        peak_slise_x = I_distr_max[i,:]
+        peak_slise_y = I_distr_max[:,j]
+        dx_max = (i - self.Nx//2 + 1) * self.dx
+        dy_max = (j - self.Ny//2 + 1) * self.dy
+        dz_max = z_max-focus
+        return I_distr_max, I_max, dz_max, dy_max, dx_max, peak_slise_x, peak_slise_y
 
 class CRL1D(CRL2D):
 
@@ -828,7 +853,7 @@ class CRL1Dm(CRL1D):
             return np.minimum(par, h_max) + d/2
         elif isinstance(x, cp.ndarray):
             y_s = cp.multiply(y, mask)
-            par = y_s**2/(2*R) + anti_mask*h_max + alpha*x**n + self.wm_1d(x=y, phase=np.random.rand()*2*np.pi, b=by, m=my) + bx*abs(cp.sin(x*mx + np.random.rand()*2*np.pi) - 2/np.pi)
+            par = y_s**2/(2*R) + anti_mask*h_max + alpha*x**n + self.wm_1d(x=y, phase=np.random.rand()*2*np.pi, b=by, m=my) + bx*(abs(cp.sin(x*mx + np.random.rand()*2*np.pi)) - 2/np.pi)
             return cp.minimum(par, h_max) + d/2
 
 if __name__ == "__main__":
