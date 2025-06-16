@@ -57,4 +57,5 @@
 Для автоматического оценивания формы дефектов линз применена **сверточная нейросеть (CNN)**:  
 [Подробнее о реализации с использованием CNN](https://github.com/mamichberdey/OpticalDeviceLib3D/tree/main/CNN_PROJECT)
   
-<img src="https://github.com/user-attachments/assets/54a63a14-30ef-4673-b7c9-40d82ee50eb4" width="800"/>
+<img src="https://github.com/user-attachments/assets/135716ba-07d4-4155-8dec-cc684b7b8943" width="800"/>
+
