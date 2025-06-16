@@ -41,11 +41,13 @@
 
 2. **Сшивка и деконволюция**  
    [Кадровая сшивка и деконволюция Ричардсона–Люси](https://github.com/mamichberdey/OpticalDeviceLib3D/tree/main/FRAMES_PREPROCESSING)  
-   <img src="https://github.com/user-attachments/assets/e2a2bf4f-baa7-4451-b7eb-17b7bb4b3278" width="800"/>
+   <img src="https://github.com/user-attachments/assets/699a930a-962b-47ac-88bc-df3350f7f9c0" width="800"/>
+
 
 3. **Численное моделирование и сравнение с экспериментом**  
    - Построение модели с дефектами линз  
    - Сравнительный анализ с результатами наблюдений
+ <img src="https://github.com/user-attachments/assets/cf12e208-4b8e-483d-b8ae-7ad207612393" width="800"/>
 
 ---
 
