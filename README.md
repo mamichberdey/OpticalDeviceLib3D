@@ -36,16 +36,18 @@
 ## 🔬 Обработка экспериментальных данных
 
 1. **Оценка PSF**  
-   [Модуль PSF-оценивания](https://github.com/mamichberdey/OpticalDeviceLib3D/tree/main/PSF_ESTIMATOR)  
+   [Модуль PSF-оценивания](https://github.com/mamichberdey/OpticalDeviceLib3D/tree/main/PSF_ESTIMATOR)
+     
    <img src="https://github.com/user-attachments/assets/4463d0fe-d073-431a-b575-0755c654a37d" width="800"/>
 
-2. **Обработка экспериментальных данных**  
-   [Кадровая сшивка и деконволюция Ричардсона–Люси](https://github.com/mamichberdey/OpticalDeviceLib3D/tree/main/FRAMES_PREPROCESSING)  
+3. **Обработка экспериментальных данных**  
+   [Кадровая сшивка и деконволюция Ричардсона–Люси](https://github.com/mamichberdey/OpticalDeviceLib3D/tree/main/FRAMES_PREPROCESSING)
+     
    <img src="https://github.com/user-attachments/assets/699a930a-962b-47ac-88bc-df3350f7f9c0" width="800"/>
 
-3. **Численное моделирование и сравнение с экспериментом**  
-   - Построение модели с дефектами линз  
-   - Сравнительный анализ с результатами наблюдений
+4. **Численное моделирование и сравнение с экспериментом**  
+   - Построение модели с дефектами линз: [2D ноутбук](https://github.com/mamichberdey/OpticalDeviceLib3D/blob/main/test_1d.ipynb), [3D ноутбук](https://github.com/mamichberdey/OpticalDeviceLib3D/blob/main/test_2d.ipynb)
+   - Сравнительный анализ с результатами наблюдений  
  <img src="https://github.com/user-attachments/assets/cf12e208-4b8e-483d-b8ae-7ad207612393" width="800"/>
 
 ---
