@@ -29,7 +29,7 @@
 
 ### 🔧 Оптическая схема:
 
-<div align="center" img src="https://github.com/user-attachments/assets/1ff41fb2-f32c-4329-9779-a010486bfca5" width="800"/>
+<div align="center"><img src="https://github.com/user-attachments/assets/1ff41fb2-f32c-4329-9779-a010486bfca5" width="800"/></div>
 
 ---
 
