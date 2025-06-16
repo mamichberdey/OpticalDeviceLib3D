@@ -14,7 +14,7 @@
 
 В проекте реализованы две основные Python-библиотеки:
 
-- [`od_2d`](https://github.com/mamichberdey/OpticalDeviceLib3D/blob/main/opticaldevicelib_1d.py) — построение 2D-схем  
+- [`od_2d`](https://github.com/mamichberdey/OpticalDeviceLib3D/blob/main/opticaldevicelib_1d.py) — моделирование в 2D  
 - [`od_3d`](https://github.com/mamichberdey/OpticalDeviceLib3D/blob/main/opticaldevicelib_2d.py) — моделирование в 3D  
 
 Примеры использования — в ноутбуках:  
@@ -39,10 +39,9 @@
    [Модуль PSF-оценивания](https://github.com/mamichberdey/OpticalDeviceLib3D/tree/main/PSF_ESTIMATOR)  
    <img src="https://github.com/user-attachments/assets/4463d0fe-d073-431a-b575-0755c654a37d" width="800"/>
 
-2. **Сшивка и деконволюция**  
+2. **Обработка экспериментальных данных**  
    [Кадровая сшивка и деконволюция Ричардсона–Люси](https://github.com/mamichberdey/OpticalDeviceLib3D/tree/main/FRAMES_PREPROCESSING)  
    <img src="https://github.com/user-attachments/assets/699a930a-962b-47ac-88bc-df3350f7f9c0" width="800"/>
-
 
 3. **Численное моделирование и сравнение с экспериментом**  
    - Построение модели с дефектами линз  
@@ -54,5 +53,5 @@
 ## 🤖 Автоматизация с помощью нейросетей
 
 Для автоматического оценивания формы дефектов линз применена **сверточная нейросеть (CNN)**:  
-[Подробнее о CNN-модуле](https://github.com/mamichberdey/OpticalDeviceLib3D/tree/main/CNN_PROJECT)  
+[Подробнее о реализации с использованием CNN](https://github.com/mamichberdey/OpticalDeviceLib3D/tree/main/CNN_PROJECT)  
 <img src="https://github.com/user-attachments/assets/54a63a14-30ef-4673-b7c9-40d82ee50eb4" width="800"/>
