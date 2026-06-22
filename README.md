@@ -22,11 +22,10 @@ Usage examples are provided in Jupyter notebooks:
 - [2D notebook](https://github.com/mamichberdey/OpticalDeviceLib3D/blob/main/test_1d.ipynb)  
 - [3D notebook](https://github.com/mamichberdey/OpticalDeviceLib3D/blob/main/test_2d.ipynb)
 
-## Optical layout
+## Optical setup example
 
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/1ff41fb2-f32c-4329-9779-a010486bfca5" width="800"/>
-</div>
+<img width="1331" height="1001" alt="image" src="https://github.com/user-attachments/assets/99056c8f-a060-4a96-a1c3-2a3f03b53f4c" />
+
 
 ## Applications
 
