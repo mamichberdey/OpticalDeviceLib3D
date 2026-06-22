@@ -5,7 +5,7 @@
 The theoretical foundation is provided by the principles of coherent X‑ray optics [1, 2]. Numerical wavefield propagation from the source to the object and then to the detector is performed using algorithms that implement the Huygens–Fresnel principle. This approach allows the computation of complex amplitude and intensity distributions at every stage of the model experiment.
 
 ## Features
-
+The framework enables simulation of optical devices, such as:
 - Point and extended sources with adjustable energy or wavelength  
 - Apertures and stops  
 - Parabolic [CRL lenses](https://en.wikipedia.org/wiki/Compound_refractive_lens)  
