@@ -1,61 +1,48 @@
 # OpticalDeviceLib3D 🛠️🔦
 
-**OpticalDeviceLib3D** — проект для моделирования оптических схем с использованием *синхротронного рентгеновского излучения*.
+**OpticalDeviceLib3D** is a library for modeling optical schemes using synchrotron X‑ray radiation. It enables the calculation of wavefield propagation in free space based on the Huygens–Fresnel principle, and accounts for the interaction of radiation with matter through the complex refractive index. In the projection approximation, the object’s effect is described by a complex transmission function — a standard approach for modelling images of optically thin samples.
 
-Возможности проекта:
-- Точечные и протяжённые источники с заданной энергией или длиной волны  
-- Отверстия и апертуры  
-- Параболические [CRL-линзы](https://en.wikipedia.org/wiki/Compound_refractive_lens)  
-- Построение схем в 2D и 3D  
+The theoretical foundation is provided by the principles of coherent X‑ray optics [1, 2]. Numerical wavefield propagation from the source to the object and then to the detector is performed using algorithms that implement the Huygens–Fresnel principle. This approach allows the computation of complex amplitude and intensity distributions at every stage of the model experiment.
 
----
+## Features
 
-## 📚 Библиотеки
+- Point and extended sources with adjustable energy or wavelength  
+- Apertures and stops  
+- Parabolic [CRL lenses](https://en.wikipedia.org/wiki/Compound_refractive_lens)  
+- 2D and 3D layout construction
 
-В проекте реализованы две основные Python-библиотеки:
+## Project structure
 
-- [`od_2d`](https://github.com/mamichberdey/OpticalDeviceLib3D/blob/main/opticaldevicelib_1d.py) — моделирование в 2D  
-- [`od_3d`](https://github.com/mamichberdey/OpticalDeviceLib3D/blob/main/opticaldevicelib_2d.py) — моделирование в 3D  
+The project includes two main Python libraries:
 
-Примеры использования — в ноутбуках:  
-- [2D ноутбук](https://github.com/mamichberdey/OpticalDeviceLib3D/blob/main/test_1d.ipynb)  
-- [3D ноутбук](https://github.com/mamichberdey/OpticalDeviceLib3D/blob/main/test_2d.ipynb)
+- [`opticaldevicelib_1d`](https://github.com/mamichberdey/OpticalDeviceLib3D/blob/main/opticaldevicelib_1d.py) — for 2D modelling  
+- [`opticaldevicelib_2d`](https://github.com/mamichberdey/OpticalDeviceLib3D/blob/main/opticaldevicelib_2d.py) — for 3D modelling  
 
----
+Usage examples are provided in Jupyter notebooks:  
+- [2D notebook](https://github.com/mamichberdey/OpticalDeviceLib3D/blob/main/test_1d.ipynb)  
+- [3D notebook](https://github.com/mamichberdey/OpticalDeviceLib3D/blob/main/test_2d.ipynb)
 
-## 🔍 Применение
+## Optical layout
 
-Проект использовался для оценки формы отклонений поверхности линзы по экспериментальным данным и сравнения с результатами численного моделирования.
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/1ff41fb2-f32c-4329-9779-a010486bfca5" width="800"/>
+</div>
 
-### 🔧 Оптическая схема:
+## Applications
 
-<div align="center"><img src="https://github.com/user-attachments/assets/1ff41fb2-f32c-4329-9779-a010486bfca5" width="800"/></div>
+The framework has been used in the following projects:
 
----
+### 1. [XRayImagePro](https://github.com/mamichberdey/XRayImagePro)
 
-## 🔬 Обработка экспериментальных данных
+The library was employed to validate X‑ray image processing methods by comparing experimental data with simulation results. Calculations were performed to generate model images of a test object using the parameters of the experimental setup.
 
-1. **Оценка PSF**  
-   [Модуль PSF-оценивания](https://github.com/mamichberdey/OpticalDeviceLib3D/tree/main/PSF_ESTIMATOR)
-     
-   <div align="center"><img src="https://github.com/user-attachments/assets/4463d0fe-d073-431a-b575-0755c654a37d" width="800"/></div>
+### 2. Automation with neural networks
 
-3. **Обработка экспериментальных данных**  
-   [Кадровая сшивка и деконволюция Ричардсона–Люси](https://github.com/mamichberdey/OpticalDeviceLib3D/tree/main/FRAMES_PREPROCESSING)
-     
-   <div align="center"><img src="https://github.com/user-attachments/assets/699a930a-962b-47ac-88bc-df3350f7f9c0" width="800"/></div>
-
-4. **Численное моделирование и сравнение с экспериментом**  
-   - Построение модели с дефектами линз: [2D ноутбук](https://github.com/mamichberdey/OpticalDeviceLib3D/blob/main/test_1d.ipynb), [3D ноутбук](https://github.com/mamichberdey/OpticalDeviceLib3D/blob/main/test_2d.ipynb)
-   - Сравнительный анализ с результатами наблюдений  
- <div align="center"><img src="https://github.com/user-attachments/assets/cf12e208-4b8e-483d-b8ae-7ad207612393" width="800"/></div>
+*(coming soon)*
 
 ---
 
-## 🤖 Автоматизация с помощью нейросетей
+## References
 
-Для автоматического оценивания формы дефектов линз применена **сверточная нейросеть (CNN)**:  
-[Примеры оценивания с использованием CNN в ноутбуках: ](https://github.com/mamichberdey/OpticalDeviceLib3D/tree/main/CNN_PROJECT)
-  
-<div align="center"><img src="https://github.com/user-attachments/assets/135716ba-07d4-4155-8dec-cc684b7b8943" width="800"/></div>
-
+[1] Kohn V.G., Folomeshkin M.S. Feasibility of X-ray beam nanofocusing with compound refractive lenses. *Synch. Rad.*, 2021, V. 28, № 2, P. 419-428. https://doi.org/10.1107/S1600577520016495  
+[2] Kohn V.G. 2024. https://xray-optics.ucoz.ru/XR/xrwp.htm
